@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<head>
+  <title>
+    Profile 
+  </title>
+  <link rel="stylesheet" type="text/css" href="twitterLoginPage.css">
+</head>
+<body>
+
+  <div class="content">
+    <div class="navbar">
+      <div class="logo">
+        <a href="#" class="bitlab"> <span class="news" style="font-weight: 100;">TWITTER</span></a>
+      </div>
+      <div class="menu">
+        <a href="#">Tweets</a>
+        <a href=""><script>document.write(localStorage.getItem('name'));</script></a>
+        <a href="Login.html" onclick="Logout()">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <h1>Welcome <script>document.write(localStorage.getItem('name'));</script></h1>
+  </div>
+
+
+  <div style="text-align: center;">
+    <span>EMAIL:</span>
+    <h4><script>document.write(localStorage.getItem('email'));</script></h4>
+    <span>FULL NAME:</span>
+    <h4><script>document.write(localStorage.getItem('name'));</script></h4>
+    <span>COUNTRY:</span>
+    <h4><script>document.write(localStorage.getItem('country'));</script></h4>
+    <span>BIRTHDATE:</span>
+    <h4><script>document.write(localStorage.getItem('birthday'));</script></h4>
+  </div>
+
+
+
+</body>
+<script>
+  let name=localStorage.getItem('name')?localStorage.getItem('name'):''
+  console.log(name);
+  if(name=='')
+  {
+    alert('You need to login first');
+    window.location.href="Login.html";
+  }
+
+  function Logout()
+  {
+    localStorage.removeItem('name');
+    localStorage.removeItem('email');
+    localStorage.removeItem('country');
+    localStorage.removeItem('birthday');
+    window.location.href="Login.html";
+  }
+</script>
+
+</html>
